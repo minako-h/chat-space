@@ -20,7 +20,7 @@ Column|Type|Options|
 ### Association
 - has_many :messages
 - has_many :groups_users
-- has_many :users
+- has_many :users, through: :users_groups
 
 ## messagesテーブル
 |Column|Type|Options|
