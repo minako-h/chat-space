@@ -41,7 +41,9 @@
         
           .i-size{
             font-size: 14px;
+
           }
+
         }
       }
     }
@@ -56,6 +58,12 @@
       &__team {
         font-size: 15px;
         padding: 20px 0 5px 0;
+        
+
+        a{
+          color: $c1;
+          text-decoration: none;
+        }
       }
   
       &__message {
