@@ -6,23 +6,14 @@
       .side_bar__user--name__top-item__icons
         = link_to new_group_path(current_user), class: "side_bar__user--name__top-item__icons__btn" do
           = icon('fas', 'edit',class:'i-size')
-        = link_to edit_user_path(current_user),class: "side_bar__user--name__top-item__icons__btn"do
+        = link_to edit_user_path(current_user), class: "side_bar__user--name__top-item__icons__btn"do
           = icon('fas', 'cog',class:'i-size')
 
   .side_bar__group--list
     - current_user.groups.each do |group|
       .side_bar__group--list__item
         .side_bar__group--list__item__team
-          = link_to '#' do
+          = link_to group_messages_path(group) do
             = group.name
         .side_bar__group--list__item__message
-          メッセージはまだありません。
-
-
-
-    -# .side_bar__group--list__item
-    -#   .side_bar__group--list__item__team
-    -#     techcamp
-    -#   .side_bar__group--list__item__message
-    -#     まだメッセージがありません
-
+          = group.show_last_message

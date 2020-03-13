@@ -95,13 +95,16 @@
           background-color: $c1;
           color: $c4;
           line-height: 50px;
-          padding: 0 10px;
           position: relative;
-          // display:flex;
+          
+          &__m {
+            height: 50px;
+            width: 100%;
+            padding-left: 10px;
+          }
 
           &__image {
             position: absolute;
-            // display: inline;
             right: 10px;
             top:0;
   
@@ -121,7 +124,14 @@
           text-align: center;
           line-height: 50px;
           margin-left: 15px;
-        
+    
+          
+          &__s {
+            height: 50px;
+            width: 100px;
+            background-color: #38aef0;
+            color: $c1;
+          }
           }
       }
 

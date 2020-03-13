@@ -4,38 +4,27 @@
 
       .main_chat__group--info__main-header__box
         .main_chat__group--info__main-header__box__leftbox
-          test
+          = @group.name
         .main_chat__group--info__main-header__box__rightbox
-          Member:masa
-
+          Member:
+          - @group.users.each do |user|
+            = user.name
       .main_chat__group--info__main-header__edit
-        = link_to "#",class: "main_chat__group--info__main-header__edit__btn" do
+        = link_to edit_group_path(@group), class: "main_chat__group--info__main-header__edit__btn" do
           Edit
 
   .main_chat__message--list
-    .main_chat__message--list__data
-      .main_chat__message--list__data__name
-        masa
-      .main_chat__message--list__data__time
-        2019/11/20(Wed) 17:43:01
-    .main_chat__message--list__text
-      おはよう！
-    .main_chat__message--list__data
-      .main_chat__message--list__data__name
-        masa
-      .main_chat__message--list__data__time
-        2019/11/20(Wed) 17:43:34
-    .main_chat__message--list__text
-      今日は夜から雨
+    = render @messages
 
   
   .main_chat__message--form
-    .main_chat__message--form__input
-      .main_chat__message--form__input__text
-        type a message
-        .main_chat__message--form__input__text__image
-          %label{class: "main_chat__message--form__input__text__image__file"}
-            = icon('far', 'image')
-            %input{type: "file"}
-      .main_chat__message--form__input__btn
-        Send
+    = form_for [@group, @message] do |f|
+      .main_chat__message--form__input
+        .main_chat__message--form__input__text
+          = f.text_field :content, class: 'main_chat__message--form__input__text__m', placeholder: 'type a message'
+          .main_chat__message--form__input__text__image
+            = f.label :image, class: 'form__mask__image' do
+              = icon('far', 'image')
+              = f.file_field :image, class: 'hidden'
+        .main_chat__message--form__input__btn
+          = f.submit 'Send', class: 'main_chat__message--form__input__btn__s'
