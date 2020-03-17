@@ -26,7 +26,6 @@
           color: $c4;
           font-size: 12px;
           margin-top: 15px;
-         
         }
 
       }
@@ -56,30 +55,35 @@
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 35px 40px;
+    overflow: scroll;
   
     &__data {
-      display: flex;
 
-      &__name {
-        color: $c2;
-        font-size: 16px;
-        font-weight: bold;
-        margin-right: 10px;
+
+      &__list {
+        display: flex;
+
+        &__name {
+          color: $c2;
+          font-size: 16px;
+          font-weight: bold;
+          margin-right: 10px;
+        }
+        
+        &__time {
+          color: $c4;
+          font-size: 12px;
+        }
       }
-      
-      &__time {
-        color: $c4;
-        font-size: 12px;
+
+      &__text {
+        color: #434A54;
+        font-size: 14px;
+        margin: 12px 0 46px 0;
       }
-    }
-
-    &__text {
-      color: #434A54;
-      font-size: 14px;
-      margin: 12px 0 46px 0;
-    }
 
     }
+  }
 
     &__message--form {
       background-color: #d2d2d2;
